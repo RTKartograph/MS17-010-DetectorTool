@@ -1,5 +1,5 @@
-import socket
-from scapy.all import *
+from scapy.all import packet, sniff
+import sys
 import win32api
 
 class EternalBlue_Counter_Tool:
@@ -14,7 +14,8 @@ class EternalBlue_Counter_Tool:
             print("Not a correct input type.")
 
     def PacketDetect(self):
-        pass
+        print("\nStarting SMB sniffing session...")
+        sniff(prn=lambda x: x.summary(), filter="tcp port 445", store=False)
 
     def Check_Vuln(self):
         try:
