@@ -33,8 +33,8 @@ class EternalBlue_Counter_Tool:
         if start_inpt == "1":
             self.PacketDetect()
         elif start_inpt == "2":
-            file, version_info = self.srv_locator()
-            self.Check_Vuln(file, version_info)
+            file, version_info = self.DriverLocator()
+            self.CheckVulnerability(file, version_info)
         else:
             print("Not a correct input type.")
 
@@ -47,7 +47,7 @@ class EternalBlue_Counter_Tool:
     def PacketLogging(self, packet):
         console.log(f"[bold blue] TCP Packet[/bold blue]: [bold yellow]{packet.summary()}")
     
-    def srv_locator(self):
+    def DriverLocator(self):
         filepaths = [
             r"C:\Windows\System32\drivers\srv.sys",
             r"C:\Windows\System32\drivers\srv2.sys"
@@ -60,7 +60,7 @@ class EternalBlue_Counter_Tool:
         console.print("CRITICAL ERROR: Could not find srv.sys or srv2.sys. Stopping the program.", style="bold red")
         sys.exit()    
 
-    def Check_Vuln(self, file, version_info):
+    def CheckVulnerability(self, file, version_info):
         table = Table(title="MS17-010 Diagnosis")
         table.add_column("Specification", style="red")
         table.add_column("Result", style="cyan")         
