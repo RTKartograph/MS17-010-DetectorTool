@@ -6,6 +6,7 @@ from FetchPatch import *
 import sys
 import win32api
 import os
+import platform
 
 console = Console()
 
@@ -127,7 +128,9 @@ class EternalBlue_Counter_Tool:
             win_ver = sys.getwindowsversion()
             arch = platform.machine().lower()
             arch = "x64" if "64" else "x86"
-            GetPatchURL((win_ver.major, win_ver.minor, win_ver.build), win_ver.build, arch)
+            print(GetPatchURL((win_ver.major, win_ver.minor, win_ver.build), win_ver.build, arch))
+            """if filename:
+                RunPatch(filename)"""
         else:
             print("Exiting the program...")
             sys.exit()
