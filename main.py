@@ -20,7 +20,7 @@ def clear():
 
 class EternalBlue_Counter_Tool:
     def __init__(self):
-        clear() # Mainly used on debug
+        clear()
 
         console.print(f"[[bold blue]*[/bold blue]] Eternal[blue]blue[/blue]/Eternal[bright_magenta]romance[/bright_magenta] IDS Tool")
         console.print("#" * 35, style="bold blue")
@@ -74,10 +74,8 @@ class EternalBlue_Counter_Tool:
             ls & 0xffff
         )
         humanReadableVersion = '{}.{}.{}.{}'.format(*version)
-        # print(f"Current Version: {humanReadableVersion}")
 
         win_ver = sys.getwindowsversion()
-        # print(f"Current OS: {win_ver.major}, Minor {win_ver.minor}, Build {win_ver.build}")
         table.add_row("Driver Name:", os.path.basename(file))
         table.add_row("Driver Version:", humanReadableVersion)
         table.add_row("OS Version:", f"{win_ver.major}.{win_ver.minor}, Build {win_ver.build}")
@@ -93,7 +91,7 @@ class EternalBlue_Counter_Tool:
         os_key = (win_ver.major, win_ver.minor)
 
         if os_key not in safe_versions:
-            console.print("OS not supported.", style="bright_black") # Why the FUCK is grey called bright black???
+            console.print("OS not supported.", style="bright_black")
         
         safe_build = safe_versions[os_key]
 
