@@ -26,8 +26,8 @@ PATCH_MAP = {
     (10, 0, 10240): { # Windows 10
         "build_max": 17499,
         "arch": {
-            "x86": "",
-            "x64": ""
+            "x86": "N/A",
+            "x64": "N/A" # Update your pc if you have windows 10 PLEASE
         }
     }
 }
