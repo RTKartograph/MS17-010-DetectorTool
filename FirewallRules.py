@@ -3,7 +3,6 @@ import subprocess
 
 """
 I separated these just to keep the code clean.
-(Ngl I just wanted to look more professional rather than keep everything in one file, that'd look gross too)
 """
 
 console = Console()
